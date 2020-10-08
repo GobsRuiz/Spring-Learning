@@ -1,0 +1,39 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<hr>
+
+<a href="/usuarios">
+    <-- Voltar
+</a>
+|
+<a href="/usuarios/cadastrar">
+    <-- Cadastrar
+</a>
+
+<br>
+<br>
+
+<section>
+    <h1>
+        Lista de usuários cadastrados
+    </h1>
+
+    <div th:each="user : ${users}">
+        <p>
+            <span th:text="${user.id}"></span>
+        </p>
+
+        <p>
+            <span th:text="${user.name}"></span>
+        </p>
+
+        <p th:text="${user.lastname}">
+        </p>
+
+        <hr>
+    </div>
+</section>

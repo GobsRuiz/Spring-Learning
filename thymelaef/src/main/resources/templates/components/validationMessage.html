@@ -1,0 +1,6 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<div th:if="${not #strings.isEmpty(error)}">
+    <span th:text="${error}"></span>
+</div>

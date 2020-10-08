@@ -1,0 +1,35 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<hr>
+
+<a href="/usuarios">
+    <-- Voltar
+</a>
+
+<br>
+<br>
+
+<section>
+    <h1>
+        Cadastrar usuário
+    </h1>
+
+    <form method="POST">
+        <div>
+            <input type="text" name="name" id="name" placeholder="Nome:">
+        </div>
+
+        <div> 
+            <input type="text" name="lastname" id="lastname" placeholder="Sobrenome:">
+        </div>
+
+        <button>
+            Enviar
+        </button>
+    </form>
+    <th:block th:insert="components/validationMessage"></th:block>
+</section>

@@ -1,0 +1,23 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<a href="/usuarios">
+    <-- Voltar
+</a>
+
+<section>
+    <h1>
+        Adicionar autor
+    </h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" id="title" placeholder="Nome">
+
+        <button>
+            Adicionar
+        </button>
+    </form>
+</section>

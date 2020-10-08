@@ -1,0 +1,23 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<a href="/usuarios">
+    <-- Voltar
+</a>
+
+<section>
+    <h1>
+        Publicar notícias
+    </h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" placeholder="Título">
+
+        <button>
+            Publicar
+        </button>
+    </form>
+</section>

@@ -1,0 +1,30 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<a href="/usuarios">
+    <-- Voltar
+</a>
+
+<hr>
+
+<section>
+    <h1>
+        Usuário: <span th:text="${user.name}"></span>
+    </h1>
+
+    <div>
+        <p>
+            <span th:text="${user.id}"></span>
+        </p>
+
+        <p>
+            <span th:text="${user.name}"></span>
+        </p>
+
+        <p th:text="${user.lastname}">
+        </p>
+    </div>
+</section>
