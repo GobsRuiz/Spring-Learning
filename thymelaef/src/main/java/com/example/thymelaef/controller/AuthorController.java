@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -91,11 +92,10 @@ public class AuthorController {
     }
 
     // Update
-    @PostMapping("/autor/update/{id}")
+    @RequestMapping("/autor/update/{id}")
     public String update(@PathVariable("id") long id, @Valid Author author, BindingResult result, Model model)
     {
         if(result.hasErrors()) {
-            author.setId(id);
             return "author/edit";
         }
 
@@ -106,10 +106,10 @@ public class AuthorController {
 
 
     // Delete
-    @RequestMapping("/deletar/{id}")
+    @RequestMapping("/autor/deletar/{id}")
     public String delete(@PathVariable("id") long id)
     {
         authorservice.delete(id);
-        return "redirect:/autor";
+        return "redirect:/autor/lista";
     }
 }
