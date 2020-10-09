@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class News {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     // @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
@@ -29,9 +29,13 @@ public class News {
     @NotBlank //Can't be null
     public String title;
 
-    // @OneToOne(cascade = CascadeType.ALL)
-    // @JoinColumn(name = "author_id", referencedColumnName = "id")
-    // private Author author;
+    @NotBlank //Can't be null
+    @Lob
+    public String description;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    private Author author;
 
     public Long getId() {
         return id;
@@ -49,15 +53,19 @@ public class News {
         this.title = title;
     }
 
-    // public Author getAuthor() {
-    //     return author;
-    // }
+    public Author getAuthor() {
+        return author;
+    }
 
-    // public void setAuthor(Author author) {
-    //     this.author = author;
-    // }
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 
-    // @NotBlank
-    // @Lob // Long text
-    // public String description;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

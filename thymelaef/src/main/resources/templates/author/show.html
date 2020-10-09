@@ -1,0 +1,26 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<hr>
+
+<a href="/autor/lista">
+    <-- Voltar
+</a>
+
+<br>
+<br>
+
+<section>
+    <h1>
+        Detalhes do autor: <span th:text="${author.name}"></span>
+    </h1>
+
+    <hr>
+
+    <p th:text="${author.id}"></p>
+    <p th:text="${author.name}"></p>
+</section>
+

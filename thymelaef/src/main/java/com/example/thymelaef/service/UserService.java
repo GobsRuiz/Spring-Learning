@@ -14,4 +14,7 @@ public interface UserService {
 
     // Register
     User save(User user);
+
+    // Delete
+    void delete(Long id);
 }

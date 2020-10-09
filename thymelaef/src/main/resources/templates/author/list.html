@@ -1,0 +1,53 @@
+<!-- Include layout -->
+<th:block th:insert="components/layout"></th:block>
+
+<!-- Include header -->
+<th:block th:insert="components/header"></th:block>
+
+<hr>
+
+<a href="/autor">
+    <-- Voltar
+</a>
+|
+<a href="/autor/cadastrar">
+    <-- Cadastrar
+</a>
+
+<br>
+<br>
+
+<section>
+    <h1>
+        Lista de autores cadastrados
+    </h1>
+
+    <div th:each="author : ${authors}">
+        <p>
+            <span th:text="${author.id}"></span>
+        </p>
+
+        <p>
+            <span th:text="${author.name}"></span>
+        </p>
+
+        <p>
+            <a th:href="@{/autor/detalhes/{id}(id=${author.id})}">
+            Detalhes
+            </a>
+
+            &nbsp;
+
+            <a th:href="@{/autor/editar/{id}(id=${author.id})}">
+                Editar
+            </a>
+
+            &nbsp;
+
+            <a th:href="@{/deletar/{id}(id=${author.id})}">
+                Deletar
+            </a>
+        </p>
+        <hr>
+    </div>
+</section>

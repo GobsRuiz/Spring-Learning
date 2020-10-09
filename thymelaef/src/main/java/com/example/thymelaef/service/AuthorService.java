@@ -2,19 +2,19 @@ package com.example.thymelaef.service;
 
 import java.util.List;
 
-import com.example.thymelaef.model.News;
+import com.example.thymelaef.model.Author;
 
-public interface NewsService {
+public interface AuthorService {
     
     // Get all data from the database
-    List<News> findAll();
+    List<Author> findAll();
 
     // Get the data from the table using the id field.
-    News findById(long id);
+    Author findById(long id);
 
     // Register
-    News save(News news);
+    Author save(Author author);
 
     // Delete
-    void delete(Long id);
+    void delete(long id);
 }

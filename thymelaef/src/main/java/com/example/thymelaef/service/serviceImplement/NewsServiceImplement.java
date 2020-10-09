@@ -28,8 +28,13 @@ public class NewsServiceImplement implements NewsService{
     }
 
     @Override
-    public News save(News News) {
+    public News save(News news) {
         
-        return repositorio.save(News);
+        return repositorio.save(news);
     }
+
+    @Override
+    public void delete(Long id) {
+		repositorio.delete(id);
+	}
 }

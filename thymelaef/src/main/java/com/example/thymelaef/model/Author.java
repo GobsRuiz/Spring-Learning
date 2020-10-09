@@ -13,14 +13,14 @@ import javax.validation.constraints.NotBlank;
 public class Author {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
     private String name;
 
-    // @OneToOne(mappedBy  = "author")
-    // private News news;
+    @OneToOne(mappedBy  = "author")
+    private News news;
 
     public Long getId() {
         return id;
@@ -38,11 +38,11 @@ public class Author {
         this.name = name;
     }
 
-    // public News getNews() {
-    //     return news;
-    // }
+    public News getNews() {
+        return news;
+    }
 
-    // public void setNews(News news) {
-    //     this.news = news;
-    // }
+    public void setNews(News news) {
+        this.news = news;
+    }
 }

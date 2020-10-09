@@ -33,4 +33,8 @@ public class UserServiceImplement implements UserService {
         return repositorio.save(user);
     }
     
+    @Override
+    public void delete(Long id) {
+		repositorio.delete(id);
+	}
 }
