@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class NewsController {
@@ -39,7 +41,7 @@ public class NewsController {
     }
 
     @PostMapping("/noticias/publicar")
-    public String store(HttpServletRequest request)
+    public String store(HttpServletRequest request, @RequestParam("image") MultipartFile imageFile)
     {   
         String title = request.getParameter("title");
         String description = request.getParameter("description");

@@ -33,6 +33,8 @@ public class News {
     @Lob
     public String description;
 
+    public String path;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
@@ -67,5 +69,13 @@ public class News {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

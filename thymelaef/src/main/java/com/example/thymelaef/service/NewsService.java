@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.example.thymelaef.model.News;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface NewsService {
     
     // Get all data from the database
@@ -17,4 +19,7 @@ public interface NewsService {
 
     // Delete
     void delete(Long id);
+
+    // Save image
+    void saveImage(MultipartFile imageFile) throws Exception;
 }

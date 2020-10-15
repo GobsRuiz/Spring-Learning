@@ -87,7 +87,7 @@ public class AuthorController {
     {
         Author author = authorservice.findById(id);
 
-        model.addAttribute("author", author);
+        
         return "author/edit";
     }
 
